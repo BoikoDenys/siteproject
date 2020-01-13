@@ -1,0 +1,29 @@
+.loader{
+  font-family: 'Lato', sans-serif;
+}
+
+.posttitle{
+  text-align: center;
+}
+
+.postdate{
+  font-size: .85em;
+  text-align: center;
+  font-style: italic;
+
+}
+.postform{
+  text-align: center;
+}
+
+.postcontent{
+  text-indent: 5%;
+}
+
+.smalltext{
+  font-size: 0.85em;
+}
+
+.textinputclass{
+  width: 250%;
+}

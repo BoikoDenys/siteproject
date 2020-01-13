@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+  <div class="centerstage">
+    <br>
+    <ul>
+      {% for post in draft_list %}
+        <div class="post">
+          <li>
+            <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title|title }}</a></h3>
+            <span class='postdate loader'>Created on: {{ post.created_date|date:"D M Y" }} ::
+              <a href="{% url 'post_detail' pk=post.pk %}">Text: {{ post.text|safe|truncatechars:100 }}</a>
+            </span>
+            <hr>
+          </li>
+        </div>
+      {% endfor %}
+    </ul>
+  </div>
+
+{% endblock %}

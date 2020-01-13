@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <div class="commentform">
+
+    <h1>New comment:</h1>
+
+    <form method="POST">
+      {% csrf_token %}
+
+      <label for="author">Author:
+        <input type="text" name="author" placeholder="Enter your name">
+      </label>
+      <br>
+
+      <label for="text">Your thoughts about it?:</label>
+        <textarea class="form-control" name='text' rows="5"></textarea>
+
+      <button type="submit" class="save btn btn-success">Post Comment</button>
+
+    </form>
+
+  </div>
+{% endblock %}

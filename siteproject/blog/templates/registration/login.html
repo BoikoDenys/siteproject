@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+  <div class="container postform">
+
+    <h2>Please Login*: </h2>
+    <p class = 'smalltext'><em>*(Must be SuperUser, please check admin for issues.)</em></p>
+    {% if form.errors %}
+        <p>Your username and password didn't match.Please try again!</p>
+    {% endif %}
+    <hr>
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+
+      <label for="username">Username:</label> <input type="text" name="username" placeholder="Username">
+
+      <label for="password">Password:</label> <input type="password" name="password">
+
+      <input type="submit" class='btn btn-info' value="Login">
+      <input type="hidden" name="next" value="{{ next }}">
+
+    </form>
+      <small>For test purposes: test; testpassword</small>
+
+
+  </div>
+{% endblock %}
